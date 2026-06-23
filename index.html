@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ansiedade</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#0b0b0d;
+    overflow:hidden;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:Arial, sans-serif;
+}
+
+/* estrelas */
+body::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:
+        radial-gradient(white 1px, transparent 1px),
+        radial-gradient(white .5px, transparent .5px);
+    background-size:120px 120px, 60px 60px;
+    opacity:.15;
+}
+
+.scene{
+    width:900px;
+    height:650px;
+    position:relative;
+}
+
+.title{
+    position:absolute;
+    top:20px;
+    left:50%;
+    transform:translateX(-50%);
+    color:#ff9ea3;
+    font-size:58px;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+/* CABEÇA */
+.head{
+    position:absolute;
+    left:50%;
+    top:52%;
+    transform:translate(-50%,-50%);
+    width:260px;
+    height:330px;
+}
+
+.head svg{
+    width:100%;
+    height:100%;
+}
+
+/* cérebro */
+.brain{
+    position:absolute;
+    top:110px;
+    left:50%;
+    transform:translateX(-50%);
+    width:150px;
+    height:100px;
+    filter:blur(.3px);
+}
+
+.brain span{
+    position:absolute;
+    inset:0;
+}
+
+.brain::before{
+    content:"";
+    position:absolute;
+    inset:-15px;
+    background:#ff5c5c;
+    border-radius:50%;
+    filter:blur(25px);
+    opacity:.8;
+}
+
+/* linhas caóticas */
+.line{
+    position:absolute;
+    background:#ff5d5d;
+    box-shadow:0 0 10px #ff5d5d;
+}
+
+/* ondas mentais */
+.ripple{
+    position:absolute;
+    width:130px;
+    height:130px;
+    border-radius:50%;
+}
+
+.ripple div{
+    position:absolute;
+    border:1px solid rgba(140,150,255,.3);
+    border-radius:50%;
+}
+
+.ripple div:nth-child(1){inset:0;}
+.ripple div:nth-child(2){inset:10px;}
+.ripple div:nth-child(3){inset:20px;}
+.ripple div:nth-child(4){inset:30px;}
+.ripple div:nth-child(5){inset:40px;}
+.ripple div:nth-child(6){inset:50px;}
+
+.word{
+    position:absolute;
+    color:#8d8d8d;
+    font-size:30px;
+}
+
+.clock{
+    position:absolute;
+    width:60px;
+    height:60px;
+    border:2px solid rgba(255,255,255,.4);
+    border-radius:50%;
+}
+
+.clock::before{
+    content:"";
+    position:absolute;
+    width:2px;
+    height:18px;
+    background:#777;
+    left:50%;
+    top:10px;
+    transform:translateX(-50%) rotate(0deg);
+}
+
+.clock::after{
+    content:"";
+    position:absolute;
+    width:14px;
+    height:2px;
+    background:#777;
+    left:50%;
+    top:50%;
+}
+
+/* posições */
+
+.expectativas{
+    right:40px;
+    top:80px;
+}
+
+.incerteza{
+    left:0;
+    top:270px;
+}
+
+.medo{
+    left:110px;
+    bottom:80px;
+}
+
+.pressao{
+    left:50%;
+    transform:translateX(-50%);
+    bottom:20px;
+}
+
+.ese{
+    right:60px;
+    top:270px;
+}
+
+.falhar{
+    right:40px;
+    bottom:80px;
+}
+
+.tempo{
+    left:110px;
+    top:80px;
+}
+
+.r1{left:40px;top:180px;}
+.r2{left:70px;top:350px;}
+.r3{right:60px;top:170px;}
+.r4{right:70px;top:280px;}
+
+.c1{left:190px;top:70px;}
+.c2{right:190px;top:70px;}
+.c3{left:170px;bottom:90px;}
+.c4{right:170px;bottom:90px;}
+
+</style>
+</head>
+<body>
+
+<div class="scene">
+
+    <div class="title">ANSIEDADE</div>
+
+    <div class="word tempo">tempo</div>
+    <div class="word expectativas">expectativas</div>
+    <div class="word incerteza">incerteza</div>
+    <div class="word medo">medo</div>
+    <div class="word pressao">pressão</div>
+    <div class="word ese">e se?</div>
+    <div class="word falhar">falhar</div>
+
+    <div class="clock c1"></div>
+    <div class="clock c2"></div>
+    <div class="clock c3"></div>
+    <div class="clock c4"></div>
+
+    <div class="ripple r1">
+        <div></div><div></div><div></div>
+        <div></div><div></div><div></div>
+    </div>
+
+    <div class="ripple r2">
+        <div></div><div></div><div></div>
+        <div></div><div></div><div></div>
+    </div>
+
+    <div class="ripple r3">
+        <div></div><div></div><div></div>
+        <div></div><div></div><div></div>
+    </div>
+
+    <div class="ripple r4">
+        <div></div><div></div><div></div>
+        <div></div><div></div><div></div>
+    </div>
+
+    <div class="head">
+
+        <svg viewBox="0 0 260 330">
+            <path
+                d="M90 20
+                C20 70,20 170,45 250
+                C70 320,170 330,220 260
+                C245 230,240 200,220 180
+                C260 130,240 60,170 30
+                C145 20,120 15,90 20"
+                fill="none"
+                stroke="#d0d0d0"
+                stroke-width="3"/>
+        </svg>
+
+        <div class="brain">
+
+            <span class="line" style="width:90px;height:2px;top:20px;left:10px;transform:rotate(25deg)"></span>
+            <span class="line" style="width:80px;height:2px;top:40px;left:40px;transform:rotate(-15deg)"></span>
+            <span class="line" style="width:100px;height:2px;top:60px;left:20px;transform:rotate(35deg)"></span>
+            <span class="line" style="width:70px;height:2px;top:25px;left:50px;transform:rotate(-45deg)"></span>
+            <span class="line" style="width:120px;height:2px;top:50px;left:0px;transform:rotate(10deg)"></span>
+            <span class="line" style="width:90px;height:2px;top:75px;left:25px;transform:rotate(-30deg)"></span>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
